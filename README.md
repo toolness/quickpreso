@@ -16,7 +16,7 @@ The generated presentations use [Popcorn.js][] for syncing audio to video conten
 
 ## Quick Start ##
 
-1. Edit the [script.html][] to your liking. Each plain-text line is text to be narrated, while all HTML elements are slides that the narration voices over.
+1. Edit [script.html][] to your liking. Each plain-text line is text to be narrated, while all HTML elements are slides that the narration voices over.
 
 2. Run `python quickpreso.py`. This will use OS X's `say` command-line tool to automatically generate audio for your narration and `ffmpeg` to convert the final audio to Ogg Vorbis. It also generates information about where slide changes occur in the narration.
 
