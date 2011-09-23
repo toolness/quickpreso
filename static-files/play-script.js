@@ -1,6 +1,13 @@
 $(window).ready(function() {
   var scriptLoaded = $("#script").load("script.html");
   var durationsLoaded = jQuery.getJSON("script.json");
+  $("#subtitle-toggle").click(function() {
+    $("#subtitle").fadeToggle();
+    if ($(this).text() == "Show subtitles")
+      $(this).text("Hide subtitles")
+    else
+      $(this).text("Show subtitles")
+  });
   jQuery.when(durationsLoaded, scriptLoaded).then(function(durations) {
     var i = 0;
     var currTime = 0;
