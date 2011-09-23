@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Modern vs. Postmodern</title>
+<style>
+#content {
+  width: 640px;
+  margin: 0 auto;
+}
+
+#visual-container {
+  position: relative;
+  width: 100%;
+  height: 430px;
+}
+
+#visual {
+  position: absolute;
+  width: 640px;
+}
+
+#voiceover {
+  width: 100%;
+  height: 64px;
+}
+
+#subtitle {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9pt;
+  color: black;
+  padding: 10px;
+  margin: 4px;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Futura", "Lucida Console", serif;
+  font-size: 48pt;
+}
+</style>
+<img src="ajax-loader.gif" id="throbber">
+<div id="content" style="display: none">
+  <div id="script" style="display: none"></div>
+  <div id="visual-container"><div id="visual"></div></div>
+  <audio id="voiceover" controls preload="auto">
+    <source src="script.ogg"></source>
+  </audio>
+  <div id="subtitle"></div>
+</div>
+<script src="jquery.min.js"></script>
+<script src="popcorn-complete.min.js"></script>
+<script src="play-script.js"></script>
