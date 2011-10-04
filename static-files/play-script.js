@@ -1,6 +1,7 @@
 $(window).ready(function() {
-  var scriptLoaded = $("#script").load("script.html");
+  var scriptLoaded = jQuery.Deferred();
   var durationsLoaded = jQuery.getJSON("script.json");
+  $("#script").load("script.html", function() { scriptLoaded.resolve(); });
   $("#subtitle-toggle").click(function() {
     $("#subtitle").fadeToggle();
     if ($(this).text() == "Show subtitles")
@@ -8,7 +9,7 @@ $(window).ready(function() {
     else
       $(this).text("Show subtitles")
   });
-  jQuery.when(durationsLoaded, scriptLoaded).then(function(durations) {
+  jQuery.when(durationsLoaded, scriptLoaded).done(function(durations) {
     var i = 0;
     var currTime = 0;
     var currVisual = null;
