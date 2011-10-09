@@ -1,6 +1,6 @@
 $(window).ready(function() {
   var scriptLoaded = jQuery.Deferred();
-  var durationsLoaded = jQuery.getJSON("script.json");
+  var metadataLoaded = jQuery.getJSON("script.json");
   $("#script").load("script.html", function() { scriptLoaded.resolve(); });
   $("#subtitle-toggle").click(function() {
     $("#subtitle").fadeToggle();
@@ -9,16 +9,17 @@ $(window).ready(function() {
     else
       $(this).text("Show subtitles")
   });
-  jQuery.when(durationsLoaded, scriptLoaded).done(function(durations) {
+  jQuery.when(metadataLoaded, scriptLoaded).done(function(metadata) {
     var i = 0;
     var currTime = 0;
     var currVisual = null;
     var pop = Popcorn("#voiceover");
+    var durations = metadata[0].durations;
     $("#script").contents().each(function() {
       if (this.nodeType == this.TEXT_NODE) {
         var subtitle = jQuery.trim(this.nodeValue);
-        var speakingTime = durations[0][i];
-        var pauseTime = durations[0][i+1];
+        var speakingTime = durations[i];
+        var pauseTime = durations[i+1];
         if (currVisual) {
           currVisual.end = currTime + speakingTime + pauseTime;
           pop.footnote(currVisual);

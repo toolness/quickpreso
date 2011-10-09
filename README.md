@@ -16,13 +16,13 @@ The generated presentations use [Popcorn.js][] for syncing audio to video conten
 
 ## Quick Start ##
 
-1. Edit [script.html][] to your liking. Each plain-text line is text to be narrated, while all HTML elements are slides that the narration voices over.
+1. Run `python manage.py runserver`.
 
-2. Run `python quickpreso.py`. This will use OS X's `say` command-line tool to automatically generate audio for your narration and `ffmpeg` to convert the final audio to Ogg Vorbis. It also generates information about where slide changes occur in the narration.
+2. Edit [script.html][] to your liking. Each plain-text line is text to be narrated, while all HTML elements are slides that the narration voices over.
 
-3. View [index.html][] in Firefox or Chrome.
+3. Open/reload http://127.0.0.1:8020 in Firefox or Chrome.
 
-4. Repeat steps 1-3 as necessary until you're happy with your presentation. When you're finished, just upload everything in the `static-files` directory to a web server.
+4. Repeat steps 2-3 as necessary until you're happy with your presentation. When you're finished, just upload everything in the `static-files` directory to a web server.
 
   [script.html]: https://github.com/toolness/quickpreso/blob/master/static-files/script.html
   [index.html]: https://github.com/toolness/quickpreso/blob/master/static-files/index.html
