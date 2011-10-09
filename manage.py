@@ -4,7 +4,8 @@
     commands:
     
       runserver       - run web server on 127.0.0.1 port %(port)s
-      build           - build all content
+      build           - build all generated content
+      clean           - remove all generated content
 """
 
 from wsgiref.simple_server import make_server
@@ -128,6 +129,12 @@ if __name__ == "__main__":
         serve('127.0.0.1')
     elif cmd == 'build':
         build()
+    elif cmd == 'clean':
+        for filename in [jsonpath, oggpath]:
+            if os.path.exists(filename):
+                print "removing %s" % filename
+                os.remove(filename)
+        print "done cleaning."
     else:
         print "unknown command: %s" % cmd
         sys.exit(1)
