@@ -18,7 +18,7 @@ The generated presentations use [Popcorn.js][] for syncing audio to video conten
 
 1. Run `python manage.py runserver`.
 
-2. Edit [script.html][] to your liking. Each plain-text line is text to be narrated, while all HTML elements are slides that the narration voices over.
+2. Edit [script.html][] to your liking. Each plain-text line is text to be narrated, while all HTML elements are slides that the narration voices over. **Warning**: The algorithm for parsing this file is currently very simple and fragile; every slide must begin with a `<`, and each slide and narration must be self-contained on a single line.
 
 3. Open/reload http://127.0.0.1:8020 in Firefox or Chrome.
 
