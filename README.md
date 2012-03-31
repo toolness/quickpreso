@@ -2,6 +2,10 @@ Quickpreso is an attempt to make prototyping presentations be more like prototyp
 
 Whether this is a good idea remains to be seen.
 
+For more information, read the [blog post][].
+
+  [blog post]: http://www.toolness.com/wp/2012/03/prototyping-presentations/
+
 ## Requirements ##
 
 To generate presentations, you need:
